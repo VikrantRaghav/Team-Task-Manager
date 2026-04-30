@@ -36,9 +36,14 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen grid place-items-center p-4">
-      <form className="bg-white shadow rounded-lg p-6 w-full max-w-md space-y-4" onSubmit={handleSubmit}>
-        <h1 className="text-xl font-bold">Login</h1>
+    <div className="min-h-screen grid place-items-center p-4 bg-slate-50">
+      <div className="w-full max-w-md space-y-4">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold text-slate-900">Team Task Manager</h1>
+          <p className="text-slate-600 mt-1">Organize projects, assign tasks, and collaborate efficiently.</p>
+        </div>
+        <form className="bg-white shadow rounded-lg p-6 w-full space-y-4" onSubmit={handleSubmit}>
+          <h2 className="text-xl font-bold">Login</h2>
         {error && <p className="text-red-600 text-sm">{error}</p>}
         <input className="w-full border rounded p-2" placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
         <input className="w-full border rounded p-2" placeholder="Password" type="password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} />
@@ -46,7 +51,8 @@ const Login = () => {
           {loading ? "Logging in..." : "Login"}
         </button>
         <p className="text-sm">No account? <Link className="text-blue-600" to="/register">Register</Link></p>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };
